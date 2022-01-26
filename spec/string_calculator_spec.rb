@@ -41,5 +41,11 @@ describe StringCalculator do
         expect(string_calculator.add('3,6,9,9,5,4')).to eql(36)
       end
     end
+
+    context "with new lines charaters" do
+      it "return 6" do
+        expect(string_calculator.add("1\n2,3")).to eql(6)
+      end
+    end
   end
 end

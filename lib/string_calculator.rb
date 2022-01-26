@@ -8,6 +8,6 @@ class StringCalculator
 
   private
     def split_numbers(string_numbers)
-      string_numbers.split(',')
+      string_numbers.split(/[\n,]/)
     end
 end
