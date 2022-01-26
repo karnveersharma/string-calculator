@@ -51,5 +51,11 @@ describe StringCalculator do
         expect(string_calculator.add("1\n2,3\n5\n8,6")).to eql(25)
       end
     end
+
+    context "with delimeter" do
+      it "returns 3" do
+        expect(string_calculator.add("//;\n1;2")).to eql(3)
+      end
+    end
   end
 end
