@@ -61,5 +61,12 @@ describe StringCalculator do
         expect(string_calculator.add("//[***]\n1***3***6")).to eq(10)
       end
     end
+
+    context "with negative numbers" do
+      it "throws exception `negatives not allowed` when negative number passed" do
+        expect{string_calculator.add("-5")}.to raise_error(RuntimeError, "negatives not allowed")
+        expect{string_calculator.add("-1,-2")}.to raise_error(RuntimeError, "negatives not allowed")
+      end
+    end
   end
 end

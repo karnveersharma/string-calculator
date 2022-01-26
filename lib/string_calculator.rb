@@ -17,6 +17,8 @@ class StringCalculator
         numbers = remove_delimiter(numbers, delimiter)
       end
 
+      raise 'negatives not allowed' if negatives? numbers
+
       numbers.sum(&:to_i)
     end
 
@@ -30,5 +32,9 @@ class StringCalculator
 
     def remove_delimiter numbers, delimiter
       numbers.last.delete(delimiter).split('')
+    end
+
+    def negatives? numbers
+      numbers.any? { |number| number.include?('-') }
     end
 end
