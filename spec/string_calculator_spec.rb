@@ -46,6 +46,10 @@ describe StringCalculator do
       it "return 6" do
         expect(string_calculator.add("1\n2,3")).to eql(6)
       end
+
+      it "return 25" do
+        expect(string_calculator.add("1\n2,3\n5\n8,6")).to eql(25)
+      end
     end
   end
 end
