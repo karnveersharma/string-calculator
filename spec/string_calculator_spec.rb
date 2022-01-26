@@ -31,5 +31,15 @@ describe StringCalculator do
         expect(string_calculator.add('4,5')).to eql(9)
       end
     end
+
+    context "with multiple numbers" do
+      it "return 24" do
+        expect(string_calculator.add('4,6,7,7')).to eql(24)
+      end
+
+      it "return 36" do
+        expect(string_calculator.add('3,6,9,9,5,4')).to eql(36)
+      end
+    end
   end
 end
