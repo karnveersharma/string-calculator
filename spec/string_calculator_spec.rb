@@ -21,5 +21,15 @@ describe StringCalculator do
         expect(string_calculator.add('5')).to eql(5)
       end
     end
+
+    context "with 2 number" do
+      it "return 3" do
+        expect(string_calculator.add('1,2')).to eql(3)
+      end
+
+      it "return 9" do
+        expect(string_calculator.add('4,5')).to eql(9)
+      end
+    end
   end
 end
