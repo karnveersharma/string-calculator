@@ -13,9 +13,10 @@ class StringCalculator
 
     def get_total(numbers)
       if delimiters? numbers
-        delimeter = delimeter(numbers)
-        puts "delimeter is #{delimeter}"
+        delimiter = delimiter(numbers)
+        numbers = remove_delimiter(numbers, delimiter)
       end
+
       numbers.sum(&:to_i)
     end
 
@@ -23,7 +24,11 @@ class StringCalculator
       numbers.any?{|number| number.include?("//")}
     end
 
-    def delimeter numbers
+    def delimiter numbers
       numbers.first.delete('//[]')
+    end
+
+    def remove_delimiter numbers, delimiter
+      numbers.last.delete(delimiter).split('')
     end
 end
