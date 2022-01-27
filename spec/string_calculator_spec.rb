@@ -18,7 +18,7 @@ describe StringCalculator do
       end
 
       it "returns 8" do
-        expect(string_calculator.add('5')).to eql(5)
+        expect(string_calculator.add('8')).to eql(8)
       end
     end
 
@@ -64,8 +64,8 @@ describe StringCalculator do
 
     context "with negative numbers" do
       it "throws exception `negatives not allowed` when negative number passed" do
-        expect{string_calculator.add("-5")}.to raise_error(RuntimeError, "negatives not allowed")
-        expect{string_calculator.add("-1,-2")}.to raise_error(RuntimeError, "negatives not allowed")
+        expect{string_calculator.add("-5")}.to raise_error(RuntimeError, "negatives not allowed -5")
+        expect{string_calculator.add("-1,-2")}.to raise_error(RuntimeError, "negatives not allowed -1,-2")
       end
     end
   end
